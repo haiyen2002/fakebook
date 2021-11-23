@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/messenger.css" />
+    <link rel="stylesheet" href="/public/css/Message.css" />
+    <link rel="stylesheet" href="/public/css/conversation.css" />
+    <link rel="stylesheet" href="/public/css/chatOnline.css" />
+  </head>
+  
+  <body>
+    <div class="messenger">
+      <div class="chatMenu">
+        <div class="chatMenuWrapper">
+          <input class="chatMenuInput" type="text" placeholder="search" />
+          <%- include('../../components/conversation/conversation', {listFri:
+          listFri}) %>
+        </div>
+      </div>
+      <div class="chatBox">
+        <div class="chatBoxWrapper">
+          <div class="chatBoxTop" id="messages">
+              <%- include('../../components/Message/Message') %>      
+          </div>
+          <!-- <ul id="messages"></ul> -->
+          <div class="chatBoxBottom">
+            <form id="form" action="">
+              <input
+                id="input"
+                class="chatMessageInput"
+                placeholder="write something..."
+              ></input>
+              <button onclick="handleSubmitSend()" class="chatSubmitButton">
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="chatOnline">
+        <div class="chatOnlineWrapper">
+          <%- include('../../components/chatOnline/chatOnline') %>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.socket.io/4.4.0/socket.io.min.js"
+      integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../../../public/js/conversation.js"></script>
+    <script src="../../../public/js/messenger.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+  <% listFri.map(item => {%>
+        <div class="conversation" onclick="handleMessage('<%= item._id %>')">
+        <img class="conversationImg" src="https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        <span class="conversationName"><%= item.userName%></span>
+    </div>
+    <% })%>
+       
+    
+  
